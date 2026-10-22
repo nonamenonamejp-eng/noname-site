@@ -125,7 +125,7 @@
       transition: opacity 0.3s ease;
     }
 
-    /* 端末のフォントに依存しない封筒アイコン */
+    /* 封筒アイコン：PCでは表示 */
     .mail-icon {
       position: relative;
       display: inline-block;
@@ -220,24 +220,15 @@
     }
 
     /* スマートフォン */
-    @media (max-width: 600px) {
-      .contact a .mail-icon {
-  display: none !important;
-}
-  .page {
-    padding: 36px 22px 24px;
-  }
+    @media screen and (max-width: 600px) {
+      .page {
+        padding: 36px 22px 24px;
+      }
 
-    .contact .mail-icon {
-    display: none !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    flex: 0 0 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-  }
+      /* スマホだけ封筒アイコンを非表示 */
+      .contact a .mail-icon {
+        display: none !important;
+      }
 
       .logo {
         width: 440px;
