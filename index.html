@@ -125,9 +125,39 @@
       transition: opacity 0.3s ease;
     }
 
+    /* 端末のフォントに依存しない封筒アイコン */
     .mail-icon {
-      font-size: 15px;
-      line-height: 1;
+      position: relative;
+      display: inline-block;
+      flex: 0 0 14px;
+      width: 14px;
+      height: 10px;
+      border: 1px solid currentColor;
+      border-radius: 1px;
+      color: inherit;
+      transform: translateY(-1px);
+    }
+
+    .mail-icon::before,
+    .mail-icon::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      width: 7px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .mail-icon::before {
+      left: 0;
+      transform: rotate(35deg);
+      transform-origin: left center;
+    }
+
+    .mail-icon::after {
+      right: 0;
+      transform: rotate(-35deg);
+      transform-origin: right center;
     }
 
     .contact a:hover {
@@ -282,7 +312,6 @@
 
 <body>
   <div class="page">
-
     <main class="main">
 
       <img
@@ -291,9 +320,7 @@
         alt="NO NAME™"
       >
 
-      <p class="tagline">
-        UNBOUND, UNSTOPPABLE
-      </p>
+      <p class="tagline">UNBOUND, UNSTOPPABLE</p>
 
       <h1 class="concept">
         本質を見つめ、まだない価値をカタチに
@@ -304,7 +331,7 @@
 
       <p class="contact">
         <a href="mailto:info@noname.bz">
-          <span class="mail-icon" aria-hidden="true">✉</span>
+          <span class="mail-icon" aria-hidden="true"></span>
           <span>メールでお問い合わせ</span>
         </a>
         <span class="contact-label">CONTACT</span>
@@ -315,7 +342,6 @@
     <footer class="copyright">
       © NO NAME™
     </footer>
-
   </div>
 </body>
 </html>
