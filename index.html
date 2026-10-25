@@ -33,6 +33,7 @@
     .page {
       width: 100%;
       min-height: 100vh;
+      min-height: 100svh;
       padding: 76px 24px 36px;
       display: flex;
       flex-direction: column;
@@ -175,32 +176,27 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes arrowTravel {
-      from {
-        transform: translate(-3px, 3px);
-      }
-      to {
-        transform: translate(3px, -3px);
-      }
+      from { transform: translate(-3px, 3px); }
+      to { transform: translate(3px, -3px); }
     }
 
+    /* スマートフォン：コンテンツ全体を上下左右の中央へ */
     @media (max-width: 600px) {
       .page {
         min-height: 100vh;
-        padding: 42px 18px 24px;
+        min-height: 100svh;
+        padding: 24px 18px;
+        justify-content: center;
       }
 
       .logo {
         width: 440px;
-        max-width: 92%;
+        max-width: 90%;
       }
 
       .tagline {
@@ -229,12 +225,12 @@
       }
 
       footer {
-        margin-top: 48px;
-        padding-top: 0;
+        margin-top: 0;
+        padding-top: 48px;
       }
 
-      .contact {
-        margin-top: 0;
+      .contact-label {
+        margin-bottom: 12px;
       }
 
       .copyright {
@@ -242,6 +238,7 @@
       }
     }
 
+    /* PCの低い画面では上部の余白を調整 */
     @media (max-height: 700px) and (min-width: 601px) {
       .page {
         padding-top: 40px;
