@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,40 +9,35 @@
   <title>NO NAME™</title>
   <meta name="description" content="本質を見つめ、まだない価値をカタチに。既成概念にとらわれず、自由な発想で可能性を切り拓く。">
 
-  <style>
-    * { box-sizing: border-box; }
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-N-32.png">
+  <link rel="icon" type="image/png" href="/favicon-N.png">
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      background: #ffffff;
-      color: #111111;
-      font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-      -webkit-font-smoothing: antialiased;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    body { min-height: 100vh; min-height: 100svh; }
+    html {
+      background: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
     .page {
       width: 100%;
       min-height: 100vh;
-      min-height: 100svh;
+      padding: 76px 24px 36px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 48px 24px 28px;
       background: #ffffff;
-    }
-
-    .main {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
     }
 
     .logo {
@@ -55,229 +51,236 @@
     }
 
     .tagline {
-      margin: 12px 0 0;
+      margin-top: 12px;
       font-size: 10px;
-      font-weight: 400;
       letter-spacing: 0.24em;
-      line-height: 1.8;
-      color: #444444;
+      text-align: center;
       opacity: 0;
       animation: fadeIn 2s ease-out 3.8s forwards;
     }
 
     .concept {
-      margin: 76px 0 0;
+      margin-top: 76px;
+      text-align: center;
+      opacity: 0;
+      animation: floatIn 2s ease-out 5.5s forwards;
+    }
+
+    .concept-main {
+      margin: 0;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
       font-size: 21px;
       font-weight: 400;
       line-height: 1.9;
-      letter-spacing: 0.055em;
-      color: #171717;
-      opacity: 0;
-      animation: floatIn 3s ease-out 5.5s forwards;
+      letter-spacing: 0.08em;
     }
 
     .concept-sub {
-      display: block;
-      margin-top: 12px;
+      margin-top: 18px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
       font-size: 14px;
       font-weight: 400;
-      line-height: 2;
-      letter-spacing: 0.035em;
-      color: #777777;
+      line-height: 2.1;
+      letter-spacing: 0.06em;
+      color: #555555;
     }
 
-    /* WHAT WE DO：文字は固定、矢印だけが動く */
     .what-we-do {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 42px;
-      padding: 8px 2px;
-      color: #222222;
-      text-decoration: none;
+      gap: 12px;
+      margin-top: 56px;
+      padding: 8px 0;
+      color: #111111;
       font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.19em;
-      line-height: 1.8;
+      letter-spacing: 0.2em;
+      text-decoration: none;
       opacity: 0;
-      animation: fadeIn 2s ease-out 7.5s forwards;
+      animation: fadeIn 2s ease-out 7s forwards;
+      transition: color 0.3s ease;
+    }
+
+    .what-we-do:hover {
+      color: #777777;
     }
 
     .what-we-do .arrow {
       display: inline-block;
       font-size: 16px;
-      font-weight: 400;
+      line-height: 1;
       letter-spacing: 0;
       animation: arrowTravel 1.2s ease-in-out infinite alternate;
     }
 
-    @keyframes arrowTravel {
-      from { transform: translate(-3px, 3px); }
-      to   { transform: translate(3px, -3px); }
+    footer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 60px;
     }
 
-    .what-we-do:hover { color: #777777; }
-
-    .what-we-do:focus-visible {
-      outline: 1px solid #888888;
-      outline-offset: 5px;
-    }
-
-    /* メールお問い合わせ */
     .contact {
-      margin: 72px 0 0;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 1.8;
-      letter-spacing: 0.08em;
+      text-align: center;
       opacity: 0;
       animation: fadeIn 2s ease-out 8.5s forwards;
     }
 
-    .contact a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px 2px;
-      color: #333333;
+    .contact-label {
+      margin-bottom: 12px;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: #777777;
+    }
+
+    .email {
+      display: inline-block;
+      color: #111111;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.8;
       text-decoration: none;
       transition: opacity 0.3s ease;
     }
 
-    .contact a:hover { opacity: 0.55; }
-
-    .contact a:focus-visible {
-      outline: 1px solid #888888;
-      outline-offset: 5px;
-    }
-
-    .contact-label {
-      display: block;
-      width: 100%;
-      margin-top: 0;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      line-height: 1.5;
-      color: #777777;
-      text-align: center;
+    .email:hover {
+      opacity: 0.5;
     }
 
     .copyright {
-      margin-top: 58px;
-      color: #888888;
-      font-size: 10px;
+      margin-top: 48px;
+      color: #111111;
+      font-size: 9px;
       font-weight: 400;
-      line-height: 1.8;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-align: center;
       opacity: 0;
       animation: fadeIn 2s ease-out 9s forwards;
     }
 
     @keyframes floatIn {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes fadeIn {
       from { opacity: 0; }
-      to   { opacity: 1; }
+      to { opacity: 1; }
     }
 
-    @media screen and (max-width: 600px) {
-      .page { padding: 36px 22px 24px; }
+    @keyframes arrowTravel {
+      from { transform: translate(-3px, 3px); }
+      to { transform: translate(3px, -3px); }
+    }
 
-      .logo { width: 440px; max-width: 100%; }
-
-      .tagline {
-        margin-top: 10px;
-        font-size: 9px;
-        letter-spacing: 0.19em;
+    @media (max-width: 600px) {
+      .page {
+        padding: 48px 24px 30px;
       }
 
       .concept {
         margin-top: 62px;
+      }
+
+      .concept-main {
         font-size: 18px;
-        line-height: 2;
-        letter-spacing: 0.035em;
       }
 
       .concept-sub {
-        margin-top: 12px;
         font-size: 12px;
-        line-height: 2.1;
-        letter-spacing: 0.015em;
+        line-height: 2;
       }
 
       .what-we-do {
-        margin-top: 32px;
-        font-size: 10px;
+        margin-top: 42px;
       }
 
-      .contact { margin-top: 52px; font-size: 11px; }
-
-      .contact-label {
-        margin-top: 0;
-        font-size: 9px;
-        letter-spacing: 0.20em;
-        line-height: 1.5;
+      footer {
+        padding-top: 56px;
       }
-
-      .copyright { margin-top: 44px; font-size: 9px; }
     }
 
-    @media (max-height: 700px) {
-      .page { justify-content: flex-start; padding-top: 40px; }
-      .concept { margin-top: 48px; }
-      .what-we-do { margin-top: 24px; }
-      .contact { margin-top: 42px; }
-      .copyright { margin-top: 32px; }
+    @media (max-height: 700px) and (min-width: 601px) {
+      .page {
+        padding-top: 40px;
+      }
+
+      .concept {
+        margin-top: 48px;
+      }
+
+      footer {
+        padding-top: 48px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .logo, .tagline, .concept, .what-we-do,
-      .contact, .copyright {
-        animation: none;
-        opacity: 1;
-        transform: none;
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
       }
 
-      .what-we-do .arrow { animation: none; }
-      .contact a { transition: none; }
+      .logo,
+      .tagline,
+      .concept,
+      .what-we-do,
+      .contact,
+      .copyright {
+        opacity: 1;
+      }
     }
   </style>
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-N-32.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="/favicon-N.png">
 </head>
 
 <body>
-  <div class="page">
-    <main class="main">
+  <main class="page">
+
+    <header>
       <img class="logo" src="logo.png" alt="NO NAME™">
+      <div class="tagline">UNBOUND, UNSTOPPABLE</div>
+    </header>
 
-      <p class="tagline">UNBOUND, UNSTOPPABLE</p>
-
-      <h1 class="concept">
-        本質を見つめ、まだない価値をカタチに
-        <span class="concept-sub">
-          既成概念にとらわれず、自由な発想で可能性を切り拓く
-        </span>
-      </h1>
-
-      <a class="what-we-do" href="what-we-do.html" aria-label="WHAT WE DO：私たちができること">
-        <span>WHAT WE DO</span>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <p class="contact">
-        <a href="mailto:info@noname.bz">メールでお問い合わせ</a>
-        <span class="contact-label">CONTACT</span>
+    <section class="concept">
+      <p class="concept-main">
+        本質を見つめ、まだない価値をカタチに。
       </p>
-    </main>
 
-    <footer class="copyright">© NO NAME™</footer>
-  </div>
+      <div class="concept-sub">
+        既成概念にとらわれず、自由な発想で<br>
+        可能性を切り拓く。
+      </div>
+    </section>
+
+    <a class="what-we-do" href="what-we-do.html">
+      <span>WHAT WE DO</span>
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <footer>
+      <div class="contact">
+        <div class="contact-label">CONTACT</div>
+        <a class="email" href="mailto:info@noname.bz">
+          メールでお問い合わせ
+        </a>
+      </div>
+
+      <div class="copyright">© NO NAME™</div>
+    </footer>
+
+  </main>
 </body>
 </html>
