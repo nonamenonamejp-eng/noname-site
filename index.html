@@ -132,7 +132,7 @@
       margin-bottom: 12px;
       font-size: 9px;
       font-weight: 400;
-      letter-spac@media (max-width: 600px)ing: 0.25em;
+      letter-spacing: 0.25em;
       color: #777777;
     }
 
@@ -153,15 +153,15 @@
     }
 
     .copyright {
-  margin-top: 48px;
-  color: #111111;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-align: center;
-  opacity: 0;
-  animation: fadeIn 2s ease-out 9s forwards;
-}
+      margin-top: 48px;
+      color: #111111;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 9s forwards;
+    }
 
     @keyframes floatIn {
       from {
@@ -175,40 +175,70 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes arrowTravel {
-      from { transform: translate(-3px, 3px); }
-      to { transform: translate(3px, -3px); }
+      from {
+        transform: translate(-3px, 3px);
+      }
+      to {
+        transform: translate(3px, -3px);
+      }
     }
 
     @media (max-width: 600px) {
       .page {
-  padding: 64px 24px 30px;
-  justify-content: flex-start;
-}
+        min-height: 100vh;
+        padding: 42px 18px 24px;
+      }
+
+      .logo {
+        width: 440px;
+        max-width: 92%;
+      }
+
+      .tagline {
+        margin-top: 10px;
+      }
 
       .concept {
-        margin-top: 62px;
+        margin-top: 48px;
       }
 
       .concept-main {
-        font-size: 18px;
+        font-size: clamp(13px, 4.2vw, 16px);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
       }
 
       .concept-sub {
+        margin-top: 14px;
         font-size: 12px;
         line-height: 2;
+        letter-spacing: 0.03em;
       }
 
       .what-we-do {
-        margin-top: 42px;
+        margin-top: 32px;
       }
 
       footer {
-        padding-top: 56px;
+        margin-top: 48px;
+        padding-top: 0;
+      }
+
+      .contact {
+        margin-top: 0;
+      }
+
+      .copyright {
+        margin-top: 32px;
       }
     }
 
