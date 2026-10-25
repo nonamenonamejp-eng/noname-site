@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,36 +7,23 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>NO NAME™</title>
-  <meta
-    name="description"
-    content="本質を見つめ、まだない価値をカタチに。既成概念にとらわれず、自由な発想で可能性を切り拓く。"
-  >
+  <meta name="description" content="本質を見つめ、まだない価値をカタチに。既成概念にとらわれず、自由な発想で可能性を切り拓く。">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       width: 100%;
       min-height: 100%;
       background: #ffffff;
       color: #111111;
-      font-family:
-        "Helvetica Neue",
-        Arial,
-        "Noto Sans JP",
-        sans-serif;
+      font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
-    body {
-      min-height: 100vh;
-      min-height: 100svh;
-    }
+    body { min-height: 100vh; min-height: 100svh; }
 
     .page {
       width: 100%;
@@ -57,7 +45,6 @@
       text-align: center;
     }
 
-    /* ロゴ：ゆっくり浮かび上がる */
     .logo {
       display: block;
       width: 440px;
@@ -68,7 +55,6 @@
       animation: floatIn 3s ease-out 0.5s forwards;
     }
 
-    /* ブランドタグライン */
     .tagline {
       margin: 12px 0 0;
       font-size: 10px;
@@ -80,7 +66,6 @@
       animation: fadeIn 2s ease-out 3.8s forwards;
     }
 
-    /* コンセプト */
     .concept {
       margin: 76px 0 0;
       font-size: 21px;
@@ -102,7 +87,44 @@
       color: #777777;
     }
 
-    /* メールお問い合わせ：アイコンなし */
+    /* WHAT WE DO：文字は固定、矢印だけが動く */
+    .what-we-do {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 42px;
+      padding: 8px 2px;
+      color: #222222;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.19em;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 7.5s forwards;
+    }
+
+    .what-we-do .arrow {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      animation: arrowTravel 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes arrowTravel {
+      from { transform: translate(-3px, 3px); }
+      to   { transform: translate(3px, -3px); }
+    }
+
+    .what-we-do:hover { color: #777777; }
+
+    .what-we-do:focus-visible {
+      outline: 1px solid #888888;
+      outline-offset: 5px;
+    }
+
+    /* メールお問い合わせ */
     .contact {
       margin: 72px 0 0;
       font-size: 12px;
@@ -123,16 +145,13 @@
       transition: opacity 0.3s ease;
     }
 
-    .contact a:hover {
-      opacity: 0.55;
-    }
+    .contact a:hover { opacity: 0.55; }
 
     .contact a:focus-visible {
       outline: 1px solid #888888;
       outline-offset: 5px;
     }
 
-    /* CONTACT */
     .contact-label {
       display: block;
       width: 100%;
@@ -145,7 +164,6 @@
       text-align: center;
     }
 
-    /* コピーライト */
     .copyright {
       margin-top: 58px;
       color: #888888;
@@ -158,40 +176,20 @@
       animation: fadeIn 2s ease-out 9s forwards;
     }
 
-    /* 浮かび上がる動き */
     @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* 静かに現れる動き */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
-    /* スマートフォン */
     @media screen and (max-width: 600px) {
-      .page {
-        padding: 36px 22px 24px;
-      }
+      .page { padding: 36px 22px 24px; }
 
-      .logo {
-        width: 440px;
-        max-width: 100%;
-      }
+      .logo { width: 440px; max-width: 100%; }
 
       .tagline {
         margin-top: 10px;
@@ -213,10 +211,12 @@
         letter-spacing: 0.015em;
       }
 
-      .contact {
-        margin-top: 52px;
-        font-size: 11px;
+      .what-we-do {
+        margin-top: 32px;
+        font-size: 10px;
       }
+
+      .contact { margin-top: 52px; font-size: 11px; }
 
       .contact-label {
         margin-top: 0;
@@ -225,47 +225,27 @@
         line-height: 1.5;
       }
 
-      .copyright {
-        margin-top: 44px;
-        font-size: 9px;
-      }
+      .copyright { margin-top: 44px; font-size: 9px; }
     }
 
-    /* 高さが小さい画面 */
     @media (max-height: 700px) {
-      .page {
-        justify-content: flex-start;
-        padding-top: 40px;
-      }
-
-      .concept {
-        margin-top: 48px;
-      }
-
-      .contact {
-        margin-top: 42px;
-      }
-
-      .copyright {
-        margin-top: 32px;
-      }
+      .page { justify-content: flex-start; padding-top: 40px; }
+      .concept { margin-top: 48px; }
+      .what-we-do { margin-top: 24px; }
+      .contact { margin-top: 42px; }
+      .copyright { margin-top: 32px; }
     }
 
-    /* 動きを控えたい端末ではアニメーションを省略 */
     @media (prefers-reduced-motion: reduce) {
-      .logo,
-      .tagline,
-      .concept,
-      .contact,
-      .copyright {
+      .logo, .tagline, .concept, .what-we-do,
+      .contact, .copyright {
         animation: none;
         opacity: 1;
         transform: none;
       }
 
-      .contact a {
-        transition: none;
-      }
+      .what-we-do .arrow { animation: none; }
+      .contact a { transition: none; }
     }
   </style>
 
@@ -276,12 +256,7 @@
 <body>
   <div class="page">
     <main class="main">
-
-      <img
-        class="logo"
-        src="logo.png"
-        alt="NO NAME™"
-      >
+      <img class="logo" src="logo.png" alt="NO NAME™">
 
       <p class="tagline">UNBOUND, UNSTOPPABLE</p>
 
@@ -292,18 +267,18 @@
         </span>
       </h1>
 
+      <a class="what-we-do" href="what-we-do.html" aria-label="WHAT WE DO：私たちができること">
+        <span>WHAT WE DO</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
       <p class="contact">
-        <a href="mailto:info@noname.bz">
-          メールでお問い合わせ
-        </a>
+        <a href="mailto:info@noname.bz">メールでお問い合わせ</a>
         <span class="contact-label">CONTACT</span>
       </p>
-
     </main>
 
-    <footer class="copyright">
-      © NO NAME™
-    </footer>
+    <footer class="copyright">© NO NAME™</footer>
   </div>
 </body>
 </html>
