@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>WHAT WE DO | NO NAME™</title>
+  <meta name="description" content="NO NAME™ — 考えることから、実現することまで。">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-N-32.png">
+  <link rel="icon" type="image/png" href="/favicon-N.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 76px 24px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ffffff;
+    }
+
+    .logo {
+      display: block;
+      width: 440px;
+      max-width: 90%;
+      height: auto;
+      opacity: 0;
+      animation: floatIn 3s ease-out 0.3s forwards;
+    }
+
+    .tagline {
+      margin-top: 12px;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 2s forwards;
+    }
+
+    .heading {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 100px;
+      margin-bottom: 54px;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 2.8s forwards;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: #777777;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 6vw, 58px);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+    }
+
+    .heading-line {
+      width: 100%;
+      height: 1px;
+      margin-top: 30px;
+      background: #111111;
+      transform-origin: left;
+      animation: lineIn 1.5s ease-out 3.3s both;
+    }
+
+    .services {
+      width: 100%;
+      max-width: 900px;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 3.5s forwards;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 100px 1fr 1.1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 32px 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .service:first-child {
+      border-top: 1px solid #dddddd;
+    }
+
+    .number {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: #888888;
+    }
+
+    .service-title {
+      margin: 0;
+      font-size: clamp(19px, 2.5vw, 25px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+    }
+
+    .service-title span {
+      display: block;
+      margin-top: 5px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+
+    .description {
+      margin: 0;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 13px;
+      line-height: 2.1;
+      letter-spacing: 0.04em;
+      color: #555555;
+    }
+
+    .closing {
+      margin-top: 66px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 2.2;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 4.5s forwards;
+    }
+
+    .closing::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
+      margin: 0 auto 25px;
+      background: #111111;
+    }
+
+    .contact {
+      margin-top: 80px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 5.2s forwards;
+    }
+
+    .contact-label {
+      margin-bottom: 12px;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: #777777;
+    }
+
+    .email {
+      color: #111111;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      transition: opacity 0.3s ease;
+    }
+
+    .email:hover {
+      opacity: 0.5;
+    }
+
+    .copyright {
+      margin-top: 48px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: #111111;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 5.7s forwards;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes lineIn {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 48px 24px 30px;
+      }
+
+      .heading {
+        margin-top: 76px;
+        margin-bottom: 38px;
+      }
+
+      .service {
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
+        padding: 26px 0;
+      }
+
+      .number {
+        align-self: start;
+        padding-top: 6px;
+      }
+
+      .service-title {
+        font-size: 21px;
+      }
+
+      .description {
+        grid-column: 2;
+        margin-top: 2px;
+        font-size: 12px;
+        line-height: 2;
+      }
+
+      .closing {
+        margin-top: 50px;
+        font-size: 12px;
+      }
+
+      .contact {
+        margin-top: 64px;
+      }
+    }
+
+    @media (max-height: 700px) and (min-width: 601px) {
+      .page {
+        padding-top: 40px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .logo,
+      .tagline,
+      .heading,
+      .services,
+      .closing,
+      .contact,
+      .copyright {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header>
+      <img class="logo" src="logo.png" alt="NO NAME™">
+      <div class="tagline">UNBOUND, UNSTOPPABLE</div>
+    </header>
+
+    <section class="heading">
+      <div class="eyebrow">OUR APPROACH</div>
+      <h1>WHAT WE DO</h1>
+      <div class="heading-line"></div>
+    </section>
+
+    <section class="services">
+
+      <article class="service">
+        <div class="number">01 /</div>
+        <h2 class="service-title">
+          THINK
+          <span>考える</span>
+        </h2>
+        <p class="description">
+          事業の悩みや課題を整理し、アイデアを具体化する。
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="number">02 /</div>
+        <h2 class="service-title">
+          PLAN
+          <span>組み立てる</span>
+        </h2>
+        <p class="description">
+          企画、店舗づくり、看板、広告、Webなど、実現に向けた計画を考える。
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="number">03 /</div>
+        <h2 class="service-title">
+          CONNECT
+          <span>つなぐ</span>
+        </h2>
+        <p class="description">
+          必要な人や専門業者、実現するための手段をつなぐ。
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="number">04 /</div>
+        <h2 class="service-title">
+          CREATE
+          <span>カタチにする</span>
+        </h2>
+        <p class="description">
+          アイデアを実際の成果や仕組みへと進める。
+        </p>
+      </article>
+
+    </section>
+
+    <div class="closing">
+      考えることから、実現することまで。
+    </div>
+
+    <footer>
+      <div class="contact">
+        <div class="contact-label">CONTACT</div>
+        <a class="email" href="mailto:info@noname.bz">
+          ✉ info@noname.bz
+        </a>
+      </div>
+
+      <div class="copyright">© NO NAME™</div>
+    </footer>
+
+  </main>
+</body>
+</html>
