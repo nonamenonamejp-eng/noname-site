@@ -1,0 +1,30 @@
+
+/* Shared navigation — PC sidebar / mobile top */
+:root { --nav-width: 184px; }
+.site-nav { position:fixed; z-index:50; left:0; top:0; bottom:0; width:var(--nav-width); padding:37px 19px; background:#fff; border-right:1px solid #eee; display:flex; flex-direction:column; gap:38px; }
+.nav-brand { font: 600 13px Arial,sans-serif; letter-spacing:.07em; text-decoration:none; color:#111; white-space:nowrap; }
+.nav-links { display:flex; flex-direction:column; gap:23px; }
+.nav-links a { color:#999; text-decoration:none; font: 10px Arial,sans-serif; letter-spacing:.065em; line-height:1.55; transition:color .25s; }
+.nav-links a:hover,.nav-links a[aria-current="page"] { color:#111; }
+.nav-links a[aria-current="page"] { font-weight:700; }
+.nav-links .num { display:inline-block; width:24px; color:#aaa; font-size:9px; }
+.nav-links a[aria-current="page"] .num { color:#111; }
+.site-nav .nav-bottom { margin-top:auto; font-size:9px; letter-spacing:.1em; color:#aaa; }
+.site-content { margin-left:var(--nav-width); min-width:0; }
+@media(max-width:760px) {
+  :root { --nav-width:0px; }
+  .site-nav { position:relative; width:100%; height:auto; padding:17px 18px 13px; border-right:0; border-bottom:1px solid #eee; gap:13px; }
+  .nav-brand { font-size:12px; }
+  .nav-links { flex-direction:row; gap:0; justify-content:space-between; }
+  .nav-links a { font-size:clamp(8px,2.2vw,10px); letter-spacing:0; white-space:nowrap; }
+  .nav-links .num { width:auto; margin-right:3px; font-size:8px; }
+  .nav-bottom { display:none; }
+  .site-content { margin-left:0; }
+}
+
+/* Compact official logo in navigation */
+.nav-brand { display:inline-flex; align-items:center; width:112px; max-width:100%; }
+.nav-brand img { display:block; width:100%; height:auto; }
+@media(max-width:760px) {
+  .nav-brand { width:100px; }
+}

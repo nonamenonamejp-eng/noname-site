@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#ffffff">
+<title>CONSULTATION | NO NAME™</title><meta name="description" content="名前のない（NO NAME™）相談に、答えを。まずは、お話をお聞かせください。">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-N-32.png"><link rel="icon" type="image/png" href="/favicon-N.png">
+<link rel="stylesheet" href="navigation.css">
+<style>
+*{box-sizing:border-box} html{background:#fff;scroll-behavior:smooth}body{margin:0;background:#fff;color:#111;font-family:Arial,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}.page{width:100%;min-height:100vh;min-height:100svh;padding:76px 24px 36px;display:flex;flex-direction:column;align-items:center;background:#fff}
+.logo{display:block;width:440px;max-width:90%;height:auto;margin:0 auto;opacity:0;animation:floatIn 3s ease-out .5s forwards}
+.tagline{margin-top:12px;font-size:10px;letter-spacing:.24em;text-align:center;opacity:0;animation:fadeIn 2s ease-out 3.8s forwards}
+footer{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:auto;padding-top:80px}
+.contact{text-align:center;opacity:0;animation:fadeIn 2s ease-out 6.3s forwards}.contact-label{margin-bottom:12px;font-size:9px;letter-spacing:.25em;color:#777}
+.email{display:inline-block;color:#111;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;letter-spacing:.08em;line-height:1.8;text-decoration:none;transition:opacity .3s}
+.email:hover{opacity:.5}.copyright{margin-top:48px;color:#111;font-size:9px;letter-spacing:.12em;text-align:center;opacity:0;animation:fadeIn 2s ease-out 6.8s forwards}
+@keyframes floatIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes lineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes arrowTravel{from{transform:translate(-3px,3px)}to{transform:translate(3px,-3px)}}
+
+.content{width:100%;max-width:900px;margin:76px auto 0;opacity:0;animation:fadeIn 1.7s ease-out 1.3s forwards}
+.eyebrow{font-size:10px;letter-spacing:.25em;color:#888;margin-bottom:13px}
+.section-title{font-size:clamp(32px,5vw,56px);font-weight:400;letter-spacing:.055em;line-height:1.2;margin:0}
+.rule{height:1px;background:#111;margin:25px 0 35px}
+.jp{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif}
+@media(max-width:760px){.content{margin-top:56px}.section-title{font-size:clamp(30px,8vw,43px)}.rule{margin:20px 0 30px}}
+
+/* Keep the first headline on one baseline; logo floats above only the first phrase. */
+.lead-first { display:flex; align-items:flex-end; flex-wrap:nowrap; white-space:nowrap; padding-top:25px; }
+.ruby-logo { position:relative; display:block; flex:0 0 auto; margin-right:0; }
+.ruby-text { display:block; line-height:1.35; }
+.ruby-mark { position:absolute; left:0; right:0; bottom:calc(100% + 3px); display:flex; align-items:center; justify-content:center; gap:5px; height:18px; }
+.ruby-mark img { display:block; width:82px; height:auto; max-height:16px; object-fit:contain; }
+.ruby-line { display:block; height:1px; width:19px; background:#999; }
+.lead-suffix { display:block; flex:0 0 auto; line-height:1.35; }
+@media(max-width:760px) { .ruby-mark { height:15px; gap:4px; bottom:calc(100% + 2px); } .ruby-mark img {width:65px;max-height:13px} .ruby-line{width:14px} }
+@media(max-width:390px) { .lead-first {font-size:clamp(15px,4.4vw,19px)} }
+.lead{display:flex;align-items:baseline;flex-wrap:nowrap;white-space:nowrap;font-size:clamp(19px,2.6vw,33px);font-weight:500;letter-spacing:.045em;line-height:1.65;margin:0 0 28px}.lead-first{padding-top:0}.lead strong{display:inline;font-size:inherit;line-height:inherit;margin-left:.25em;white-space:nowrap}@media(max-width:760px){.lead{display:block;white-space:normal}.lead-first{display:flex;white-space:nowrap}.lead strong{display:block;font-size:clamp(26px,4vw,44px);margin-left:0;line-height:1.5}}
+
+.quote{border:1px solid #ddd;padding:23px 28px;margin:30px 0 24px;font-size:clamp(15px,2vw,20px);line-height:1.7;letter-spacing:.04em}
+.quote-main{font-size:clamp(15px,2vw,19px);font-weight:500}.quote-examples{font-size:clamp(12px,1.25vw,13px);color:#505050;line-height:2.05;margin-top:12px;letter-spacing:.025em}.examples-label{font-size:10px;color:#888;letter-spacing:.18em;margin:28px 0 14px}
+.examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.example{display:flex;align-items:center;gap:13px;background:#f6f6f6;padding:16px 18px;min-height:60px;font-size:13px;letter-spacing:.045em}
+.example svg{width:19px;height:19px;flex-shrink:0;stroke:#111;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.message{font-size:13px;line-height:2.1;color:#555;letter-spacing:.06em;margin:38px 0 13px}
+.invite{font-size:clamp(17px,2.4vw,23px);font-weight:500;line-height:1.7;letter-spacing:.04em;margin:0 0 27px}
+.cta{display:inline-flex;gap:12px;align-items:center;text-decoration:none;font-size:12px;letter-spacing:.2em;padding-bottom:7px;border-bottom:1px solid #111}
+@media(max-width:760px){.quote{padding:19px 16px;margin:25px 0 20px}.examples{gap:9px}.example{padding:13px 11px;gap:8px;font-size:11px;min-height:55px}.example svg{width:17px;height:17px}.message{margin-top:30px}}
+
+@media(max-width:760px){.page{padding:40px 24px 30px}footer{padding-top:56px}}
+@media(max-height:700px) and (min-width:761px){.page{padding-top:40px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}.logo,.tagline,.contact,.copyright,.concept,.what-we-do,.heading,.services,.closing,.reveal{opacity:1!important}}
+</style></head><body><nav class="site-nav" aria-label="メインナビゲーション"><a class="nav-brand" href="index.html" aria-label="NO NAME™ トップページ"><img src="logo.png" alt="NO NAME™"></a><div class="nav-links"><a href="index.html"><span class="num">01</span>TOP</a><a href="what-we-do.html"><span class="num">02</span>WHAT WE DO</a><a href="consultation.html" aria-current="page"><span class="num">03</span>CONSULTATION</a><a href="profile.html"><span class="num">04</span>PROFILE</a></div><div class="nav-bottom">UNBOUND, UNSTOPPABLE</div></nav><div class="site-content"><main class="page"><header><a href="index.html" class="logo-link" aria-label="トップへ"><img class="logo" src="logo.png" alt="NO NAME™"></a><div class="tagline">UNBOUND, UNSTOPPABLE</div></header><section class="content"><div class="eyebrow">YOUR QUESTIONS, OUR APPROACH</div><h1 class="section-title">CONSULTATION</h1><div class="rule"></div>
+<div class="lead jp"><div class="lead-first"><span class="ruby-logo"><span class="ruby-mark"><span class="ruby-line"></span><img src="logo.png" alt="NO NAME™"><span class="ruby-line"></span></span><span class="ruby-text">名前のない</span></span><span class="lead-suffix">相談に、</span></div><strong>答えを。</strong></div>
+<div class="quote jp"><div class="quote-main">こんな悩みは、どこに聞けばいいんだろう…</div><div class="quote-examples">「お店を開きたいけれど、何から始めればいいか分からない」<br>「塗装や修繕を頼みたいけれど、どこに相談すればいいのか分からない」<br>「看板を作りたい」「デザインや印刷もお願いしたい」</div></div>
+<div class="examples-label">FOR EXAMPLE</div><div class="examples"><div class="example"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18M5 10v10h14V10M4 10l2-6h12l2 6M9 20v-6h6v6"/></svg><span>店舗づくり</span></div><div class="example"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 20v-8l5-5 5 5v8M9 7l3-3 3 3M10 16h4"/></svg><span>塗装・修繕</span></div><div class="example"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="13" rx="1"/><path d="M8 9h8M8 13h5M12 18v3"/></svg><span>看板・広告</span></div><div class="example"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M8 8V4h8v4M8 13h8M8 16h5"/></svg><span>印刷・制作</span></div></div>
+<p class="message jp">話すことで、解決できる悩みもある。</p><p class="invite jp">まずは、お話をお聞かせください。</p>
+<a class="cta" href="mailto:info@noname.bz?subject=NO%20NAME%E2%84%A2%20%E3%81%B8%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">CONTACT <span aria-hidden="true">↗</span></a>
+</section><footer><div class="contact"><div class="contact-label">CONTACT</div><a class="email" href="mailto:info@noname.bz">メールでお問い合わせ</a></div><div class="copyright">© NO NAME™</div></footer></main></div></body></html>
