@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#ffffff">
+<title>PERSONAL | TAP by NO NAME™</title><meta name="description" content="TAP 個人用 — 白・黒・レッド・ピンク・パープル・イエローの6色。1枚から。">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-N-32.png"><link rel="icon" type="image/png" href="/favicon-N.png">
+<link rel="stylesheet" href="../navigation.css"><link rel="stylesheet" href="tap-nav.css">
+<style>
+
+*{box-sizing:border-box} html{background:#fff;scroll-behavior:smooth}body{margin:0;background:#fff;color:#111;font-family:Arial,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}.page{width:100%;min-height:100vh;min-height:100svh;padding:76px 24px 36px;display:flex;flex-direction:column;align-items:center;background:#fff}
+.logo{display:block;width:440px;max-width:90%;height:auto;margin:0 auto;opacity:0;animation:floatIn 3s ease-out .5s forwards}
+.tagline{margin-top:12px;font-size:10px;letter-spacing:.24em;text-align:center;opacity:0;animation:fadeIn 2s ease-out 3.8s forwards}
+footer{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:auto;padding-top:80px}
+.contact{text-align:center;opacity:0;animation:fadeIn 2s ease-out 6.3s forwards}.contact-label{margin-bottom:12px;font-size:9px;letter-spacing:.25em;color:#777}
+.email{display:inline-block;color:#111;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;letter-spacing:.08em;line-height:1.8;text-decoration:none;transition:opacity .3s}
+.email:hover{opacity:.5}.copyright{margin-top:48px;color:#111;font-size:9px;letter-spacing:.12em;text-align:center;opacity:0;animation:fadeIn 2s ease-out 6.8s forwards}
+@keyframes floatIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes lineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes arrowTravel{from{transform:translate(-3px,3px)}to{transform:translate(3px,-3px)}}
+
+.heading{width:100%;max-width:900px;margin-top:100px;margin-bottom:54px;opacity:0;animation:fadeIn 1.7s ease-out 1.3s forwards}
+.eyebrow{margin-bottom:15px;font-size:10px;letter-spacing:.25em;color:#777}
+h1{margin:0;font-size:clamp(32px,6vw,58px);font-weight:400;letter-spacing:.06em;line-height:1.2}
+.heading-line{width:100%;height:1px;margin-top:30px;background:#111;transform-origin:left;animation:lineIn 1.5s ease-out 1.6s both}
+.services{width:100%;max-width:900px;opacity:0;animation:fadeIn 1.7s ease-out 1.8s forwards}
+.service{display:grid;grid-template-columns:100px 1fr 1.1fr;gap:24px;align-items:center;padding:32px 0;border-bottom:1px solid #ddd}
+.service:first-child{border-top:1px solid #ddd}
+.number{font-size:11px;letter-spacing:.16em;color:#888}
+.service-title{margin:0;font-size:clamp(19px,2.5vw,25px);font-weight:400;letter-spacing:.08em;line-height:1.5}
+.service-title span{display:block;margin-top:5px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:13px;font-weight:400;letter-spacing:.12em}
+.description{margin:0;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:13px;line-height:2.1;letter-spacing:.04em;color:#555}
+.closing{margin-top:66px;text-align:center;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:14px;line-height:2.2;letter-spacing:.1em;opacity:0;animation:fadeIn 1.7s ease-out 2.6s forwards}
+.closing::before{content:"";display:block;width:28px;height:1px;margin:0 auto 25px;background:#111}
+.mobile-break{display:none}.pc-break{display:inline}
+@media(max-width:760px){.heading{margin-top:76px;margin-bottom:38px}.service{grid-template-columns:45px 1fr;gap:12px;padding:26px 0}.number{align-self:start;padding-top:6px}.service-title{font-size:21px}.description{grid-column:2;margin-top:2px;font-size:12px;line-height:2}.closing{margin-top:50px;font-size:12px}.mobile-break{display:block}.pc-break{display:none}}
+@media(min-width:761px) and (max-width:1100px){.service{grid-template-columns:55px 1fr 1.35fr;gap:15px}.description{font-size:12px}}
+
+@media(max-width:760px){.page{padding:40px 24px 30px}footer{padding-top:56px}}
+@media(max-height:700px) and (min-width:761px){.page{padding-top:40px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}.logo,.tagline,.contact,.copyright,.concept,.what-we-do,.heading,.services,.closing,.reveal{opacity:1!important}}
+
+
+.lead{width:100%;max-width:900px;margin:0 0 46px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 1.8s forwards}
+.lead-main{margin:0;font-size:clamp(21px,3vw,32px);font-weight:500;letter-spacing:.06em;line-height:1.6}
+.lead-sub{margin:16px 0 0;font-size:13px;line-height:2.1;letter-spacing:.05em;color:#555}
+.label{width:100%;max-width:900px;margin:66px 0 16px;font-size:10px;letter-spacing:.22em;color:#888;opacity:0;animation:fadeIn 1.7s ease-out 2s forwards}
+.label:first-of-type{margin-top:0}
+.points{width:100%;max-width:900px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 2s forwards}
+.point{background:#f6f6f6;padding:22px 20px}
+.point svg{display:block;width:20px;height:20px;margin-bottom:14px;stroke:#111;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.point h3{margin:0 0 8px;font-size:14px;font-weight:500;letter-spacing:.06em}
+.ph{display:inline-block}.point p{margin:0;font-size:12px;line-height:2;color:#555;letter-spacing:.03em}
+.flow{width:100%;max-width:900px;margin:0;padding:0;list-style:none;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 2.2s forwards}
+.flow li{display:grid;grid-template-columns:100px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid #ddd;font-size:13px;letter-spacing:.05em;line-height:1.9}
+.flow li:first-child{border-top:1px solid #ddd}
+.flow .step{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.16em;color:#888;padding-top:3px}
+.flow b{font-weight:500;margin-right:14px}.flow small{color:#555;font-size:12px}
+.for{width:100%;max-width:900px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:13px;line-height:2.1;letter-spacing:.05em;color:#555;opacity:0;animation:fadeIn 1.7s ease-out 2.2s forwards}
+.ask{width:100%;max-width:900px;margin-top:66px;opacity:0;animation:fadeIn 1.7s ease-out 2.4s forwards}
+.ask p{margin:0 0 24px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:clamp(16px,2.2vw,21px);font-weight:500;line-height:1.7;letter-spacing:.04em}
+.cta{display:inline-flex;gap:12px;align-items:center;color:#111;text-decoration:none;font-size:12px;letter-spacing:.2em;padding-bottom:7px;border-bottom:1px solid #111;transition:opacity .3s}
+.cta:hover{opacity:.5}.cta .arrow{display:inline-block;animation:arrowTravel 1.2s ease-in-out infinite alternate}
+@media(max-width:760px){.lead{margin-bottom:36px}.lead-sub{font-size:12px}.label{margin-top:50px}.points{grid-template-columns:1fr;gap:9px}.point{padding:18px 16px}.flow li{grid-template-columns:45px 1fr;gap:12px;padding:15px 0;font-size:12px}.flow b{display:block;margin:0}.for{font-size:12px}.ask{margin-top:50px}}
+@media(prefers-reduced-motion:reduce){.lead,.label,.points,.flow,.for,.ask{opacity:1!important}}
+
+
+.diagram{width:100%;max-width:900px;margin:0 0 20px;padding:44px 24px 38px;border:1px solid #ddd;display:flex;align-items:flex-start;justify-content:center;gap:clamp(10px,4vw,48px);opacity:0;animation:fadeIn 1.7s ease-out 2s forwards}
+.dg-item{display:flex;flex-direction:column;align-items:center;width:clamp(78px,16vw,150px);text-align:center}
+.dg-item svg{width:clamp(54px,9vw,84px);height:clamp(54px,9vw,84px);stroke:#111;fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.dg-en{margin-top:16px;font-size:10px;letter-spacing:.2em;color:#888;white-space:nowrap}
+.dg-jp{margin-top:6px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:13px;letter-spacing:.06em;white-space:nowrap}
+.dg-arrow{align-self:center;margin-top:-34px;width:clamp(22px,5vw,56px);height:12px;stroke:#111;fill:none;stroke-width:1;stroke-linecap:round}
+.dg-arrow line{stroke-dasharray:3 4}
+@media(max-width:760px){.diagram{padding:30px 10px 26px;margin-bottom:10px}.dg-en{margin-top:12px;font-size:8px;letter-spacing:.04em}.dg-jp{font-size:11px;letter-spacing:.02em}.dg-arrow{margin-top:-30px}}
+@media(prefers-reduced-motion:reduce){.diagram{opacity:1!important}}
+
+
+.compare{width:100%;max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 20px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 1.9s forwards}
+.cmp{padding:26px 24px}.cmp-before{border:1px dashed #ccc;color:#888}.cmp-after{background:#111;color:#fff}
+.cmp-label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.22em;margin-bottom:14px}
+.cmp ol{margin:0;padding:0;list-style:none;font-size:13px;line-height:2.1;letter-spacing:.04em}
+.cmp-before li::before{content:"— ";color:#bbb}
+.cmp-after p{margin:0;font-size:clamp(17px,2.2vw,21px);font-weight:500;line-height:1.7;letter-spacing:.05em}
+.cmp-after small{display:block;margin-top:10px;font-size:12px;color:#bbb;letter-spacing:.04em;line-height:1.9}
+@media(max-width:760px){.compare{grid-template-columns:1fr;gap:9px}.cmp{padding:20px 18px}.cmp ol{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.compare{opacity:1!important}}
+
+
+.price{width:100%;max-width:900px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 2.2s forwards}
+.plan-main{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:end;padding:28px 26px;background:#111;color:#fff;margin-bottom:12px}
+.plan-main .pl-en{grid-column:1/-1;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#aaa}
+.plan-main h3{margin:0;font-size:clamp(17px,2.2vw,21px);font-weight:500;letter-spacing:.06em}
+.plan-main .yen{font-family:Arial,sans-serif;font-size:clamp(26px,3.4vw,36px);letter-spacing:.03em;white-space:nowrap}
+.plan-main .yen small,.opt .yen small{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:11px;margin-left:4px;letter-spacing:.04em}
+.plan-main ul{grid-column:1/-1;margin:10px 0 0;padding:0;list-style:none;font-size:12px;line-height:2;color:#ccc;letter-spacing:.04em}
+.plan-main li::before{content:"— ";color:#777}
+.opt{display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:baseline;padding:18px 4px;border-bottom:1px solid #ddd}
+.plan-main+.opt{border-top:1px solid #ddd}.opt-design{margin-top:22px;border-top:1px solid #111!important;border-bottom:1px solid #111}
+.opt h4{margin:0;font-size:14px;font-weight:500;letter-spacing:.05em}
+.opt p{grid-column:1;margin:0;font-size:12px;color:#666;letter-spacing:.03em;line-height:1.9}
+.opt .yen{grid-row:1/3;grid-column:2;align-self:center;font-family:Arial,sans-serif;font-size:18px;letter-spacing:.03em;white-space:nowrap}
+.price-note{margin:14px 0 0;font-size:11px;color:#C8102E;letter-spacing:.04em;line-height:1.9}
+@media(max-width:760px){.plan-main{padding:22px 18px}.opt{padding:15px 2px}.opt .yen{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.price{opacity:1!important}}
+
+
+.gallery-note{width:100%;max-width:900px;margin:0 0 18px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;opacity:0;animation:fadeIn 1.7s ease-out 2.1s forwards}
+.gallery-note p{margin:0;font-size:14px;font-weight:500;letter-spacing:.05em;line-height:1.9}
+.gallery-note small{display:block;font-size:12px;color:#666;letter-spacing:.04em;line-height:1.9}
+.gallery{width:100%;max-width:900px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;margin:0 0 10px;opacity:0;animation:fadeIn 1.7s ease-out 2.1s forwards}
+.gallery figure{margin:0}
+.tcw{container-type:inline-size}
+.tc{--bg:#fff;--fg:#111;--sub:#666;aspect-ratio:856/540;box-sizing:border-box;padding:6.075cqw 7.009cqw 5.140cqw;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);border:1px solid #ddd;border-radius:2.804cqw;font-family:Arial,"Helvetica Neue",sans-serif;cursor:pointer;outline:none;transition:background-color .45s ease,color .45s ease,border-color .45s ease;-webkit-tap-highlight-color:transparent}
+.tc.dark,.tc:not(.dark):hover,.tc:not(.dark):focus-visible,.tc:not(.dark).flip{--bg:#111;--fg:#fff;--sub:#a8a8a8;border-color:#111}
+.tc.dark:hover,.tc.dark:focus-visible,.tc.dark.flip{--bg:#fff;--fg:#111;--sub:#666;border-color:#ddd}
+.tc-top,.tc-bot{display:flex;justify-content:space-between;align-items:center;font-size:2.220cqw;letter-spacing:.3em;color:var(--sub)}
+.tc-bot{align-items:flex-end}
+.tc-mid{flex-grow:1;display:flex;flex-direction:column;justify-content:center}
+.tc-word{margin:0;font-weight:400;letter-spacing:.04em;line-height:1;white-space:nowrap}
+.tc-line{position:relative;height:max(1px,0.350cqw);margin:4.206cqw 0 3.738cqw}.tc-bar{position:absolute;left:0;right:20.093cqw;top:0;height:100%;background:var(--fg)}.tc-bar::after{content:"";position:absolute;right:0;top:0;width:2.570cqw;height:100%;background:var(--fg);transform-origin:right center;transform:rotate(34deg)}
+.tc-jp{margin:0;font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:3.505cqw;font-weight:500;letter-spacing:.06em;line-height:1.5;white-space:nowrap}
+.tc-sub{margin:1.168cqw 0 0;font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:2.570cqw;letter-spacing:.06em;color:var(--sub)}
+.tc-mark{position:absolute;right:0;top:-8.995cqw;width:18.224cqw;height:18.224cqw;box-sizing:border-box}.tc-ring{position:absolute;left:0;top:0;width:100%;height:100%}.tc-ring circle{stroke:var(--sub);transition:stroke .45s ease}.tc-in{position:relative;width:100%;height:100%;box-sizing:border-box;border-radius:50%;border:max(1px,0.350cqw) solid var(--fg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.935cqw}
+.tc-in svg{width:6.075cqw;height:6.075cqw}
+.tc-mark span{font-size:2.103cqw;letter-spacing:.3em;padding-left:.3em;line-height:1}
+.tc-by{display:flex;align-items:center;gap:1.402cqw;font-size:2.103cqw;letter-spacing:.2em}
+.tc-by img{display:block;height:2.804cqw;width:auto;transition:filter .45s ease}
+.tc.dark img,.tc:not(.dark):hover img,.tc:not(.dark):focus-visible img,.tc:not(.dark).flip img{filter:invert(1)}
+.tc.dark:hover img,.tc.dark:focus-visible img,.tc.dark.flip img{filter:none}
+.tc-no{font-size:2.336cqw;letter-spacing:.12em}
+.gallery figcaption{margin-top:10px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;letter-spacing:.06em;color:#555}
+.gallery figcaption b{font-family:Arial,sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;color:#888;margin-right:10px}
+@media(max-width:760px){.gallery{grid-template-columns:1fr;gap:22px}}
+@media(prefers-reduced-motion:reduce){.gallery,.gallery-note{opacity:1!important}}
+
+.opt-mark{display:block;margin:4px 0 0;font-size:.9em;color:#C8102E}
+.term{width:100%;max-width:900px;margin:-4px 0 18px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;letter-spacing:.04em;line-height:1.9;color:#666;opacity:0;animation:fadeIn 1.7s ease-out 2s forwards}.term b{font-weight:500;color:#111;margin-right:.5em}@media(prefers-reduced-motion:reduce){.term{opacity:1!important}}
+.gallery .pers{margin-bottom:14px}
+.swatches{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.sw{width:28px;height:28px;border-radius:50%;border:1px solid #ccc;padding:0;cursor:pointer;position:relative;transition:transform .2s}
+.sw span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.sw:hover,.sw:focus-visible{transform:scale(1.12)}
+.sw.on{outline:1.5px solid #111;outline-offset:3px}
+.color-note{margin:6px 0 0;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:11px;color:#C8102E;letter-spacing:.04em}
+.tc.tc-pers{cursor:default}
+
+.pers-price{align-self:start;box-sizing:border-box;padding:26px 24px;background:#111;color:#fff;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif}
+.pp-en{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#aaa;margin-bottom:10px}
+.pers-price h3{margin:0;font-size:18px;font-weight:500;letter-spacing:.06em}
+.pp-yen{margin:10px 0 4px;font-family:Arial,sans-serif;font-size:32px;letter-spacing:.03em}
+.pp-yen small{font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:11px;margin-left:4px}
+.pers-price ul{margin:8px 0 16px;padding:0;list-style:none;font-size:12px;line-height:2;color:#ccc;letter-spacing:.04em}
+.pers-price li::before{content:"— ";color:#777}
+.pp-opt{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-top:1px solid #333;font-size:13px;letter-spacing:.04em}
+.pp-opt b{font-family:Arial,sans-serif;font-weight:400;font-size:16px}.pp-opt small{font-size:11px;color:#aaa;margin-left:2px}
+.gal-sep{grid-column:1/-1;margin:56px 0 4px;padding-top:28px;border-top:1px solid #ddd;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:13px;letter-spacing:.06em;color:#111}.gal-sep>span{display:block;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#888;margin-bottom:6px}
+.pers-cta{grid-column:1/-1;margin-top:18px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif}.pers-cta p{margin:0;font-size:clamp(16px,2vw,19px);font-weight:500;letter-spacing:.04em}
+.sep-note{display:block;margin-top:6px;font-size:11px;color:#C8102E;letter-spacing:.04em}
+/* visits counter */
+.visit{margin-top:18px;font-size:9px;letter-spacing:.12em;color:#111}
+</style></head><body><nav class="site-nav tap-nav" aria-label="TAPナビゲーション"><a class="nav-brand" href="index.html" aria-label="TAP by NO NAME™"><img src="tap-by-noname-white.png" alt="TAP by NO NAME™"></a><div class="nav-links"><a href="index.html"><span class="num">01</span>ABOUT</a><a href="personal.html" aria-current="page"><span class="num">02</span>PERSONAL</a><a href="business.html"><span class="num">03</span>BUSINESS</a><a href="company.html"><span class="num">04</span>COMPANY</a><a class="back" href="../index.html"><span class="bk" aria-hidden="true"></span>NO NAME™</a></div><div class="nav-bottom">NFC CARD SERVICE</div></nav><div class="site-content"><main class="page"><header><a href="index.html" class="logo-link" aria-label="TAP トップ"><img class="logo" src="tap-by-noname.png" alt="TAP by NO NAME™"></a><div class="tagline">名前を聞かなくても、つながる。</div></header><section class="heading"><div class="eyebrow">FOR INDIVIDUALS</div><h1>PERSONAL</h1><div class="heading-line"></div></section>
+<div class="label">DESIGN</div><div class="gallery-note"><p><span class="ph">個人用は、</span><span class="ph">白・黒・レッド・ピンク・パープル・イエローの</span><span class="ph">6色から。</span></p><small><span class="ph">カーソルを重ねる（スマホはタップする）と、</span><span class="ph">反対の色を見られます。</span></small></div><section class="gallery"><figure class="pers"><div class="tcw"><div class="tc tc-pers" id="pcard" role="img" aria-label="個人用カード PROFILE"><div class="tc-top"><span>TAP FOR PROFILE</span><span>NFC</span></div><div class="tc-mid"><p class="tc-word" style="font-size:13.084cqw">PROFILE</p><div class="tc-line"><div class="tc-bar"></div><div class="tc-mark"><div class="tc-in"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><rect x="14" y="10" width="22" height="40" rx="4"/><path d="M22 15h6"/><path d="M42 24a10 10 0 0 1 0 16"/><path d="M47 19a17 17 0 0 1 0 26"/><path d="M52 14a24 24 0 0 1 0 36"/></svg><span>TAP</span></div></div></div><p class="tc-jp">話の続きは、ここから。</p><p class="tc-sub">かざして、プロフィールへ。</p></div><div class="tc-bot"><div class="tc-by"><img src="tap-by-noname.png" alt="TAP by NO NAME™"></div><div class="tc-no">No.001</div></div></div></div><div class="swatches" role="group" aria-label="個人用カードの色"><button type="button" class="sw" data-c="white" aria-label="ホワイト" style="background:#fff"><span>ホワイト</span></button><button type="button" class="sw" data-c="black" aria-label="ブラック" style="background:#111"><span>ブラック</span></button><button type="button" class="sw" data-c="red" aria-label="レッド" style="background:#E60033"><span>レッド</span></button><button type="button" class="sw" data-c="pink" aria-label="ピンク" style="background:#FF2D87"><span>ピンク</span></button><button type="button" class="sw" data-c="purple" aria-label="パープル" style="background:#7B2CFF"><span>パープル</span></button><button type="button" class="sw" data-c="yellow" aria-label="イエロー" style="background:#FFD600"><span>イエロー</span></button></div><figcaption><b>01</b>個人用（名刺がわりに）｜PROFILE　6色から選べます</figcaption><p class="color-note">※モニター環境により、実際の色と異なる場合があります。<br><span class="ph">※右下のシリアル番号（No.000）は、</span><span class="ph">すべてのカードに必ず入ります。</span><br><span class="ph">番号はお選びいただけません。</span></p></figure><aside class="pers-price"><div class="pp-en">PERSONAL</div><h3>個人用カード</h3><ul><li><span class="ph">PROFILEデザイン</span><span class="ph">1枚から</span></li><li><span class="ph">白・黒・レッド・</span><span class="ph">ピンク・パープル・イエローから</span><span class="ph">選べる</span></li><li><span class="ph">行き先の設定・</span><span class="ph">動作確認込み</span></li></ul><p style="margin:0;font-size:12px;color:#ccc;line-height:1.9;letter-spacing:.04em">料金は、お問い合わせください。</p></aside><div class="pers-cta"><p><span class="ph">まずは1枚、</span><span class="ph">試してみませんか。</span></p><a class="cta" href="mailto:tap@noname.bz?subject=TAP%EF%BC%88%E5%80%8B%E4%BA%BA%E7%94%A8%E3%82%AB%E3%83%BC%E3%83%89%EF%BC%89%E3%81%AE%E7%9B%B8%E8%AB%87"><span>CONTACT</span><span class="arrow" aria-hidden="true">↗</span></a></div></section><footer><a class="to-main" href="../index.html"><span class="bk" aria-hidden="true"></span>NO NAME™ へ戻る</a><div class="contact"><div class="contact-label">CONTACT</div><a class="email" href="mailto:tap@noname.bz">メールでお問い合わせ</a></div><div class="copyright">© NO NAME™</div><div class="visit">VISITS <span id="visit-count">—</span></div></footer></main></div><script>(function(){var b="https://abacus.jasoncameron.dev/",n="nonamebz",k="site-visits",s=0;try{s=sessionStorage.getItem("nn-visit")?1:0;sessionStorage.setItem("nn-visit","1")}catch(e){}try{fetch(b+(s?"get":"hit")+"/"+n+"/"+k).then(function(r){return r.json()}).then(function(d){var el=document.getElementById("visit-count");if(el&&d&&typeof d.value==="number"){el.textContent=String(d.value)}}).catch(function(){})}catch(e){}})()</script><script>document.querySelectorAll(".tc").forEach(function(c){c.addEventListener("click",function(){if(window.matchMedia("(hover: none)").matches)c.classList.toggle("flip")})})</script><script>(function(){var C={white:['#fff','#111','#666','none','#ddd'],black:['#111','#fff','#a8a8a8','invert(1)','#111'],red:['#E60033','#fff','rgba(255,255,255,.8)','invert(1)','#E60033'],pink:['#FF2D87','#fff','rgba(255,255,255,.82)','invert(1)','#FF2D87'],purple:['#7B2CFF','#fff','rgba(255,255,255,.8)','invert(1)','#7B2CFF'],yellow:['#FFD600','#111','rgba(0,0,0,.68)','none','#FFD600']};var card=document.getElementById('pcard');if(!card)return;var cur='white';function paint(k){var v=C[k];card.style.setProperty('--bg',v[0]);card.style.setProperty('--fg',v[1]);card.style.setProperty('--sub',v[2]);card.style.borderColor=v[4];var im=card.querySelector('img');if(im)im.style.filter=v[3];}var sws=document.querySelectorAll('.sw');sws.forEach(function(b){var k=b.getAttribute('data-c');b.addEventListener('mouseenter',function(){paint(k)});b.addEventListener('mouseleave',function(){paint(cur)});b.addEventListener('focus',function(){paint(k)});b.addEventListener('click',function(){cur=k;sws.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});paint(k)});});sws[0].classList.add('on');sws[0].setAttribute('aria-pressed','true');paint(cur);})();</script></body></html>

@@ -28,3 +28,9 @@
 @media(max-width:760px) {
   .nav-brand { width:100px; }
 }
+
+.nav-tap{display:block;margin-top:18px;padding-top:22px;border-top:1px solid #eee;text-decoration:none;color:#999}
+.nav-tap img{display:block;width:50px;height:auto}
+.nav-tap span{display:block;margin-top:9px;font:9px Arial,sans-serif;letter-spacing:.1em;color:#999;transition:color .25s}
+.nav-tap:hover span{color:#111}
+@media (max-width:760px){.nav-tap{display:none}}
