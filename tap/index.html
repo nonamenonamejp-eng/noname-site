@@ -111,8 +111,8 @@ h1{margin:0;font-size:clamp(32px,6vw,58px);font-weight:400;letter-spacing:.06em;
 .gallery figure{margin:0}
 .tcw{container-type:inline-size}
 .tc{--bg:#fff;--fg:#111;--sub:#666;aspect-ratio:856/540;box-sizing:border-box;padding:6.075cqw 7.009cqw 5.140cqw;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);border:1px solid #ddd;border-radius:2.804cqw;font-family:Arial,"Helvetica Neue",sans-serif;cursor:pointer;outline:none;transition:background-color .45s ease,color .45s ease,border-color .45s ease;-webkit-tap-highlight-color:transparent}
-.tc.dark,.tc:not(.dark):hover,.tc:not(.dark):focus-visible,.tc:not(.dark).flip{--bg:#111;--fg:#fff;--sub:#a8a8a8;border-color:#111}
-.tc.dark:hover,.tc.dark:focus-visible,.tc.dark.flip{--bg:#fff;--fg:#111;--sub:#666;border-color:#ddd}
+.tc.dark,.tc:not(.dark):focus-visible,.tc:not(.dark).flip{--bg:#111;--fg:#fff;--sub:#a8a8a8;border-color:#111}
+.tc.dark:focus-visible,.tc.dark.flip{--bg:#fff;--fg:#111;--sub:#666;border-color:#ddd}
 .tc-top,.tc-bot{display:flex;justify-content:space-between;align-items:center;font-size:2.220cqw;letter-spacing:.3em;color:var(--sub)}
 .tc-bot{align-items:flex-end}
 .tc-mid{flex-grow:1;display:flex;flex-direction:column;justify-content:center}
@@ -125,8 +125,8 @@ h1{margin:0;font-size:clamp(32px,6vw,58px);font-weight:400;letter-spacing:.06em;
 .tc-mark span{font-size:2.103cqw;letter-spacing:.3em;padding-left:.3em;line-height:1}
 .tc-by{display:flex;align-items:center;gap:1.402cqw;font-size:2.103cqw;letter-spacing:.2em}
 .tc-by img{display:block;height:2.804cqw;width:auto;transition:filter .45s ease}
-.tc.dark img,.tc:not(.dark):hover img,.tc:not(.dark):focus-visible img,.tc:not(.dark).flip img{filter:invert(1)}
-.tc.dark:hover img,.tc.dark:focus-visible img,.tc.dark.flip img{filter:none}
+.tc.dark img,.tc:not(.dark):focus-visible img,.tc:not(.dark).flip img{filter:invert(1)}
+.tc.dark:focus-visible img,.tc.dark.flip img{filter:none}@media(hover:hover){.tc:not(.dark):hover{--bg:#111;--fg:#fff;--sub:#a8a8a8;border-color:#111}.tc.dark:hover{--bg:#fff;--fg:#111;--sub:#666;border-color:#ddd}.tc:not(.dark):hover img{filter:invert(1)}.tc.dark:hover img{filter:none}}
 .tc-no{font-size:2.336cqw;letter-spacing:.12em}
 .gallery figcaption{margin-top:10px;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;font-size:12px;letter-spacing:.06em;color:#555}
 .gallery figcaption b{font-family:Arial,sans-serif;font-weight:400;font-size:10px;letter-spacing:.2em;color:#888;margin-right:10px}
