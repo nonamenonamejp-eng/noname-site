@@ -34,3 +34,18 @@
 .nav-tap span{display:block;margin-top:9px;font:9px Arial,sans-serif;letter-spacing:.1em;color:#999;transition:color .25s}
 .nav-tap:hover span{color:#111}
 @media (max-width:760px){.nav-tap{display:none}}
+
+/* Hamburger menu (mobile) — main site only; TAP mini-site (.tap-nav) keeps its row */
+.nav-toggle{display:none}
+@media(max-width:760px){
+  .site-nav:not(.tap-nav){display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0;padding:14px 18px}
+  .site-nav:not(.tap-nav) .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;margin:-8px -10px -8px 0;padding:0 10px;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .nav-toggle span{display:block;height:1px;background:#111;transition:transform .25s,opacity .2s}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .site-nav:not(.tap-nav) .nav-links{display:none;flex-direction:column;justify-content:flex-start;width:100%;margin-top:14px;border-top:1px solid #eee}
+  .site-nav.open:not(.tap-nav) .nav-links{display:flex}
+  .site-nav:not(.tap-nav) .nav-links a{display:block;padding:15px 2px;border-bottom:1px solid #eee;font-size:12px;letter-spacing:.08em;white-space:normal}
+  .site-nav:not(.tap-nav) .nav-links .num{width:30px;margin-right:0;font-size:10px}
+}
