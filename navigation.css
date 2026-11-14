@@ -51,7 +51,7 @@
 }
 
 /* Next-page link at the end of each page */
-.next-nav{width:100%;box-sizing:border-box;margin:52px 0 6px;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.next-nav{width:100%;max-width:900px;box-sizing:border-box;margin:52px 0 6px;border-top:1px solid #eee;border-bottom:1px solid #eee}
 .next-nav a{display:flex;align-items:baseline;gap:16px;padding:22px 2px;color:#999;text-decoration:none;font:10px Arial,sans-serif;letter-spacing:.18em;transition:color .25s}
 .next-nav .next-name{font-size:12px;letter-spacing:.1em;color:#111}
 .next-nav i{font-style:normal;margin-right:9px;color:#aaa;font-size:9px;letter-spacing:.05em}
