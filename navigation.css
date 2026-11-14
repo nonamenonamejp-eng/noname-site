@@ -57,3 +57,7 @@
 .next-nav i{font-style:normal;margin-right:9px;color:#aaa;font-size:9px;letter-spacing:.05em}
 .next-nav .next-arrow{margin-left:auto;font-size:13px;letter-spacing:0;color:#111}
 .next-nav a:hover{color:#111}
+@media(min-width:761px){
+  .next-nav a{justify-content:flex-end}
+  .next-nav .next-arrow{margin-left:6px}
+}
