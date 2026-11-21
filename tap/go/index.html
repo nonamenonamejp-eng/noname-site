@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#ffffff">
+<title>TAP by NO NAME™</title>
+<style>
+html,body{margin:0;height:100%;background:#fff;color:#111;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Arial,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:13px;letter-spacing:.1em;line-height:2.1}
+a{color:#111;font-size:12px;letter-spacing:.08em}
+</style></head><body>
+<div>移動しています…</div>
+<a id="go" href="https://noname.bz/tap/">移動しない場合は、こちら</a>
+<script>(function(){
+/* カードのURL: https://noname.bz/tap/go/?n=番号 。飛び先は同じフォルダの map.json(番号→URL)で決まる。 */
+var n=(new URLSearchParams(location.search).get("n")||"").replace(/\D/g,""),fb="https://noname.bz/tap/",a=document.getElementById("go");
+function jump(u){if(!/^https?:\/\//.test(u||""))u=fb;a.href=u;location.replace(u)}
+if(!n){jump(fb);return}
+fetch("map.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(m){jump(m[n])}).catch(function(){jump(fb)})
+})();</script>
+</body></html>
