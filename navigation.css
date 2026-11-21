@@ -61,3 +61,13 @@
   .next-nav a{justify-content:flex-end}
   .next-nav .next-arrow{margin-left:6px}
 }
+
+/* PREORDER（左メニュー） */
+.nav-pre{display:block;margin-top:20px;text-decoration:none;color:#111;transition:opacity .2s}
+.nav-pre:hover{opacity:.7}
+.nav-pre b{display:inline-block;font:700 9px Arial,sans-serif;letter-spacing:.16em;color:#fff;background:#C8102E;padding:5px 8px 5px 9px;animation:navpreblink 1.5s ease-in-out infinite}
+.nav-pre i{display:block;margin-top:9px;font:normal 500 11px Arial,sans-serif;letter-spacing:.03em;white-space:nowrap}
+.nav-pre em{display:block;margin-top:5px;font:normal 10px "Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;letter-spacing:.06em;color:#C8102E}
+@keyframes navpreblink{0%,100%{opacity:1}50%{opacity:.3}}
+@media(max-width:760px){.nav-pre{display:none}}
+@media(prefers-reduced-motion:reduce){.nav-pre b{animation:none}}
