@@ -71,3 +71,12 @@
 @keyframes navpreblink{0%,100%{opacity:1}50%{opacity:.3}}
 @media(max-width:760px){.nav-pre{display:none}}
 @media(prefers-reduced-motion:reduce){.nav-pre b{animation:none}}
+
+/* PREORDER（携帯：ロゴとハンバーガーの間） */
+.nav-pre-m{display:none}
+@media(max-width:760px){
+  .site-nav:not(.tap-nav) .nav-pre-m{display:block;text-decoration:none;color:#111;text-align:center;line-height:1}
+  .nav-pre-m b{display:inline-block;font:700 8.5px Arial,sans-serif;letter-spacing:.12em;color:#fff;background:#C8102E;padding:5px 6px 5px 8px;animation:navpreblink 1.5s ease-in-out infinite}
+  .nav-pre-m i{display:block;margin-top:5px;font:normal 500 9.5px Arial,sans-serif;letter-spacing:.04em;white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){.nav-pre-m b{animation:none}}
