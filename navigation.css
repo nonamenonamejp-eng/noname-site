@@ -85,3 +85,6 @@
 .contact .insta:hover{color:#111}
 .contact .insta .ar{position:absolute;margin-left:.5em}
 .contact .insta{position:relative}
+@keyframes instaArrow{from{transform:translate(-2px,2px)}to{transform:translate(2px,-2px)}}
+.contact .insta .ar{animation:instaArrow 1.2s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.contact .insta .ar{animation:none}}
