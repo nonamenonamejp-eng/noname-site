@@ -81,5 +81,7 @@
 }
 @media(prefers-reduced-motion:reduce){.nav-pre-m b{animation:none}}
 
-.contact .insta{display:block;margin-top:14px;color:#999;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.18em;line-height:1.8;text-decoration:none;transition:color .3s}
+.contact .insta{display:block;text-align:center;margin-top:14px;color:#999;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.18em;line-height:1.8;text-decoration:none;transition:color .3s}
 .contact .insta:hover{color:#111}
+.contact .insta .ar{position:absolute;margin-left:.5em}
+.contact .insta{position:relative}
