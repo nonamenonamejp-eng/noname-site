@@ -65,7 +65,9 @@ addEventListener('pointerdown',ev=>{if(ev.target.closest&&ev.target.closest('#la
 addEventListener('keydown',ev=>{if(ev.key==='Escape')opening=false;});
 function pick(ev){
   [tx,ty]=toPage(ev);cx=tx;cy=ty;
-  let best=null,bv=0.05;for(const k of cards){const v=infl(k,tx,ty);if(v>bv){bv=v;best=k;}}
+  let best=null;
+  for(const e of document.elementsFromPoint(ev.clientX,ev.clientY)){const c=e.closest&&e.closest('.card');if(c&&c!==hero){best=cards.find(k=>k.el===c)||null;if(best)break;}}
+  if(!best){let bv=0.05;for(const k of cards){const v=infl(k,tx,ty);if(v>bv){bv=v;best=k;}}}
   if(!best)return;
   const cur=best.ang;place(best,HOVER);
   const keepT=fit.style.transform;fit.style.transform='scale(1) translate(-640px,-360px)';
