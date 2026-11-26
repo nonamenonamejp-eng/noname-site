@@ -72,6 +72,10 @@ footer{width:100%;display:flex;flex-direction:column;align-items:center;margin-t
 .legal-link{margin-top:30px;font-size:11px;color:#777;text-decoration:none}
 .copyright{margin-top:30px;font-size:9px;letter-spacing:.12em}
 @media(max-width:760px){.lead br.sp{display:inline}.page{padding:40px 24px 30px}.grid{grid-template-columns:1fr;gap:40px}.w-th .ph-slot{width:32px}}
+.wall{display:none;margin:0 0 34px}
+.wall iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#e9e9e9}
+.wall-note{margin:8px 0 0;font-size:11px;letter-spacing:.04em;color:#888;text-align:right}
+@media (hover:hover) and (pointer:fine) and (min-width:900px){.wall{display:block}}
 </style></head><body>
 <nav class="site-nav tap-nav" aria-label="TAPナビゲーション"><a class="nav-brand" href="index.html" aria-label="TAP by NO NAME™"><img src="tap-by-noname-white.png" alt="TAP by NO NAME™"></a><div class="nav-links"><a href="index.html"><span class="num">01</span>ABOUT</a><a href="personal.html"><span class="num">02</span>PERSONAL</a><a href="business.html"><span class="num">03</span>BUSINESS</a><a href="company.html"><span class="num">04</span>COMPANY</a><a href="works.html" aria-current="page"><span class="num">05</span>WORKS</a><a href="order.html"><span class="num">06</span>ORDER</a><a class="back" href="../index.html"><span class="bk" aria-hidden="true"></span>NO NAME™</a></div><div class="nav-bottom">CARD SERVICE</div></nav>
 <div class="site-content"><main class="page"><div class="wrap">
@@ -79,6 +83,7 @@ footer{width:100%;display:flex;flex-direction:column;align-items:center;margin-t
 <h1>WORKS</h1>
 <p class="lead">お店や会社に合わせた、カードをつくっています。<br class="sp">カードをタップすると、各サイトへ移動します。<br><span class="lead-note">※会員制・非公開のサイトには、リンクしていません。</span></p>
 <div class="rule"></div>
+<div class="wall"><iframe src="wall.html" loading="lazy" title="TAPのカードデザイン一覧"></iframe><p class="wall-note">※カードにマウスを乗せて、クリックで選べます。法人サンプルは架空の例です。</p></div>
 <div class="chips" id="chips" role="group" aria-label="業種で絞り込み"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="bar" aria-pressed="false">BAR・飲食</button><button type="button" data-k="beauty" aria-pressed="false">美容・サロン</button><button type="button" data-k="office" aria-pressed="false">士業・オフィス</button><button type="button" data-k="other" aria-pressed="false">その他</button><button type="button" data-k="own" aria-pressed="false">自社</button></div>
 
 <div class="grid" id="grid">

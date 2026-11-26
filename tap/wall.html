@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TAP カードウォール</title>
+<style>
+html,body{margin:0;height:100%;background:#e9e9e9;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+#fit{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:0 0}
+#view{position:absolute;inset:0;overflow:hidden;background:#e9e9e9;cursor:pointer}
+#page{position:absolute;left:-320px;top:-248px;width:1920px;height:1080px}
+#stage{position:absolute;inset:0;perspective:1000px;perspective-origin:50% 8%}
+#world{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d}
+.card{position:absolute;width:240px;height:151px;left:-120px;top:-151px;transform-origin:50% 100%;transform-style:preserve-3d}
+.card .f{position:absolute;inset:0;background:var(--face) center/cover;border-radius:9px;box-shadow:0 0 0 1px rgba(0,0,0,.35),0 3px 6px rgba(0,0,0,.35)}
+.card .f::after{content:'';position:absolute;inset:0;border-radius:9px;background:linear-gradient(to bottom,rgba(0,0,0,0) 35%,rgba(0,0,0,.30))}
+.nogr .f::after{display:none}
+#hero{display:none;left:0;top:0;transform-origin:50% 50%;z-index:5}
+#dim{position:absolute;inset:0;background:#000;opacity:0;z-index:4;pointer-events:none}
+#lab{position:absolute;left:960px;top:880px;transform:translateX(-50%);z-index:6;opacity:0;white-space:nowrap;pointer-events:none;
+ font:700 26px/1 'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;letter-spacing:.12em;padding:15px 40px;border-radius:40px}
+#lab.buy{pointer-events:auto;cursor:pointer;text-decoration:none;background:#111;color:#fff;border:3px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+#lab.nfs{background:#fff;color:#111;border:3px solid #111;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#hint{position:absolute;left:0;right:0;top:18px;text-align:center;z-index:8;pointer-events:none;transition:opacity .4s;
+ font:600 15px/1 'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;letter-spacing:.14em;color:#111}
+#hint span{background:rgba(255,255,255,.88);padding:9px 18px;border-radius:20px}
+</style></head><body>
+<div id="fit"><div id="view"><div id="page">
+ <div id="stage"><div id="world"></div></div>
+ <div id="hero" class="card nogr"><div class="f"></div></div>
+ <div id="dim"></div><a id="lab" target="_blank" rel="noopener"></a>
+</div>
+<div id="hint"><span id="hintt">カードの上でマウスを動かして、クリックで選ぶ</span></div></div></div>
+<script>
+const COLS=13,ROWS=46,CW=250,PITCH=13,PA=52,REST=6,HOVER=52;
+const FACES=['sample-c','sample-d','sample-e','sample-f','grad','green','pink','yellow','noname','tap','sunsa','white','black','check'];
+const AFTER=(new URLSearchParams(location.search).get('after')==='1')||Date.now()>=new Date('2026-12-01T00:00:00+09:00').getTime();
+const BUY=['grad','green','pink','yellow','white','black'];
+const fit=document.getElementById('fit'),page=document.getElementById('page'),world=document.getElementById('world');
+let S=1;
+function resize(){S=Math.min(innerWidth/1280,innerHeight/720);fit.style.transform=`scale(${S}) translate(-640px,-360px)`;}
+resize();addEventListener('resize',resize);
+world.style.transform=`translateY(620px) rotateX(${-PA}deg)`;
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const R=rng(7);let last=-1;const cards=[];
+for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){
+  const el=document.createElement('div');el.className='card';el.innerHTML='<div class="f"></div>';
+  let f;do{f=Math.floor(R()*FACES.length)}while(f===last);last=f;
+  el.firstChild.style.setProperty('--face',`url(wall-faces/${FACES[f]}.jpg)`);
+  world.appendChild(el);
+  cards.push({el,c,r,x:(c-(COLS-1)/2)*CW,z:-r*PITCH+260,face:FACES[f],ang:REST,sx:0,stop:0,sw:0});
+}
+function place(k,rot){k.el.style.transform=`translate3d(${k.x}px,0,${k.z}px) rotateX(${rot}deg)`;}
+for(const k of cards)place(k,REST);
+// measure at scale 1 (page coords)
+const keep=fit.style.transform;fit.style.transform='scale(1) translate(-640px,-360px)';
+const pr=page.getBoundingClientRect();
+for(const k of cards){const r=k.el.getBoundingClientRect();k.sx=r.left-pr.left+r.width/2;k.stop=r.top-pr.top+7;k.sw=r.width;}
+fit.style.transform=keep;
+function infl(k,cx,cy){const sc=k.sw/240;const d=Math.hypot((k.sx-cx)/(150*sc+25),(k.stop+60*sc-cy)/(48*sc+14));return Math.exp(-d*d);}
+const ease=t=>t<0?0:t>1?1:t*t*(3-2*t);
+const hero=document.getElementById('hero'),dim=document.getElementById('dim'),lab=document.getElementById('lab'),hint=document.getElementById('hint'),hintt=document.getElementById('hintt');
+let cx=-9999,cy=-9999,tx=-9999,ty=-9999,sel=null,opening=false,E=0,START=null;
+function toPage(ev){const r=document.getElementById('view').getBoundingClientRect();return [(ev.clientX-r.left)/S+320,(ev.clientY-r.top)/S+248];}
+addEventListener('pointermove',ev=>{[tx,ty]=toPage(ev);if(cx<-5000){cx=tx;cy=ty;}});
+addEventListener('pointerdown',ev=>{if(ev.target.closest&&ev.target.closest('#lab.buy'))return;[tx,ty]=toPage(ev);if(cx<-5000){cx=tx;cy=ty;}if(!sel||E<=0.001){pick(ev);}else{opening=false;}});
+addEventListener('keydown',ev=>{if(ev.key==='Escape')opening=false;});
+function pick(ev){
+  [tx,ty]=toPage(ev);cx=tx;cy=ty;
+  let best=null,bv=0.05;for(const k of cards){const v=infl(k,tx,ty);if(v>bv){bv=v;best=k;}}
+  if(!best)return;
+  const cur=best.ang;place(best,HOVER);
+  const keepT=fit.style.transform;fit.style.transform='scale(1) translate(-640px,-360px)';
+  const p0=page.getBoundingClientRect(),r=best.el.getBoundingClientRect();
+  START={cx:r.left-p0.left+r.width/2,cy:r.top-p0.top+r.height/2,w:r.width};
+  fit.style.transform=keepT;place(best,cur);
+  sel=best;opening=true;E=0.0001;
+  const buy=BUY.includes(best.face);
+  lab.style.display=AFTER?'none':'';
+  lab.className=buy?'buy':'nfs';if(buy)lab.href='https://www.noname.bz/tap/order.html';else lab.removeAttribute('href');lab.textContent=buy?'このカードを買う  →':'非売品';
+  hero.firstChild.style.setProperty('--face',`url(wall-faces/${best.face}.jpg)`);
+  hint.style.opacity=0;
+}
+let t0=performance.now();
+function frame(now){
+  const dt=Math.min(0.05,(now-t0)/1000);t0=now;
+  // pointer smoothing
+  const a=1-Math.exp(-dt*16);cx+=(tx-cx)*a;cy+=(ty-cy)*a;
+  if(sel){E+=(opening?1:-1)*dt/(opening?1.1:0.8);if(E>=1)E=1;if(E<=0){E=0;sel=null;hero.style.display='none';dim.style.opacity=0;lab.style.opacity=0;hint.style.opacity=1;hintt.textContent='カードの上でマウスを動かして、クリックで選ぶ';}}
+  const lift=sel?ease(E):0;
+  const hov=!sel;
+  const k2=1-Math.exp(-dt*11);
+  for(const k of cards){
+    const target=(hov&&cx>-5000)?REST+infl(k,cx,cy)*(HOVER-REST):(sel?REST:REST);
+    if(Math.abs(target-k.ang)>0.02){k.ang+=(target-k.ang)*k2;place(k,k.ang);}
+    const vis=(k===sel&&lift>0)?'0':'1';if(k.vis!==vis){k.el.style.opacity=vis;k.vis=vis;}
+  }
+  if(sel&&E>0){
+    const chk=sel.face==='check',s0=START.w/240,s1=chk?2.5:3.7,YE=chk?565:575;
+    const e=lift,cxx=START.cx+(960-START.cx)*e,cyy=START.cy+(YE-START.cy)*e-Math.sin(e*Math.PI)*70,sc=s0+(s1-s0)*e;
+    hero.style.display='block';
+    hero.style.transform=`translate(${cxx-120}px,${cyy-75}px) scale(${sc}) rotate(${chk?-90*e:0}deg)`;
+    hero.firstChild.style.boxShadow=`0 ${14*e}px ${28*e}px rgba(0,0,0,${0.35*e})`;
+    dim.style.opacity=(0.22*lift).toFixed(3);
+    const lp=ease((E-0.7)/0.3);lab.style.opacity=lp;lab.style.marginTop=((1-lp)*14)+'px';
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(t=>{t0=t;frame(t)});
+</script></body></html>
